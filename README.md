@@ -28,7 +28,7 @@ The entire pipeline runs inside **ComfyUI**. No stock avatars. No celebrity like
 
 <div align="center">
 
-### [▶ Click here to watch the full 1-minute AI Digital Twin video](output/Final Output.mp4)
+### [⬇ Click to Download & Watch — AI Digital Twin (1 min)](https://github.com/GuruCharan6/AI-Digital-Twin/raw/main/Final%20Output.mp4)
 
 > *1-minute talking head video — AI-generated visuals, cloned voice, frame-perfect lip-sync*
 
@@ -42,7 +42,7 @@ The entire pipeline runs inside **ComfyUI**. No stock avatars. No celebrity like
 
 ![ComfyUI I2V InfiniteTalk Workflow](https://github.com/user-attachments/assets/97ec54ff-395c-4493-964d-aad31bd842f0)
 
-*The complete I2V_InfiniteTalk pipeline running inside ComfyUI — image input (top), audio processing (middle), text conditioning (bottom), converging into the WanVideoSampler*
+*The complete I2V_InfiniteTalk pipeline — image input (top), audio processing (middle), text conditioning (bottom), converging into the WanVideoSampler*
 
 </div>
 
@@ -195,7 +195,7 @@ ComfyUI/models/
 1. Install ComfyUI
 2. Download all models (links below)
 3. Place models in correct directories
-4. Load I2V_InfiniteTalk_Workflow.json into ComfyUI
+4. Load I2V InfiniteTalk Workflow.json into ComfyUI
 ```
 
 ### Step 3 — Configure & Run
