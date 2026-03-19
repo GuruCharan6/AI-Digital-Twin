@@ -1,4 +1,3 @@
-
 <div align="center">
 
 # 🤖 AI Digital Twin — Talking Head Video Generation
@@ -21,18 +20,29 @@ This project builds a **realistic AI digital twin** — a talking-head video whe
 
 The entire pipeline runs inside **ComfyUI**. No stock avatars. No celebrity likenesses. Every visual and every word of audio is generated from my own data.
 
-> **Final output:** A 1-minute talking-head video featuring 4 AI-generated images of myself, voice cloned from my own recordings, and frame-perfect lip-synced animation.
+> **Final output:** A 1-minute talking-head video featuring AI-generated images of myself, voice cloned from my own recordings, and frame-perfect lip-synced animation.
 
 ---
 
-## 🎬 Demo Output
+## 🎬 Demo — 1 Minute AI Digital Twin
 
 <div align="center">
 
-https://![Workflow](https://github.com/user-attachments/assets/97ec54ff-395c-4493-964d-aad31bd842f0)
-github.com/GuruCharan6/AI-Digital-Twin/assets/demo/Final_Output_2.mp4
+### [▶ Click here to watch the full 1-minute AI Digital Twin video](output/Final_Output_2.mp4)
 
-> *1-minute AI digital twin video — fully generated, cloned voice, lip-synced animation*
+> *1-minute talking head video — AI-generated visuals, cloned voice, frame-perfect lip-sync*
+
+</div>
+
+---
+
+## 🔧 ComfyUI Workflow
+
+<div align="center">
+
+![ComfyUI I2V InfiniteTalk Workflow](https://github.com/user-attachments/assets/97ec54ff-395c-4493-964d-aad31bd842f0)
+
+*The complete I2V_InfiniteTalk pipeline running inside ComfyUI — image input (top), audio processing (middle), text conditioning (bottom), converging into the WanVideoSampler*
 
 </div>
 
@@ -47,18 +57,20 @@ FLUX LoRA Training → AI-Generated Images of Myself
        ↓
 Voice Recording (2–3 min) → Chatterbox Voice Cloning → Cloned Audio
        ↓
-ComfyUI InfiniteTalk Workflow
-       ├── Image  → Resize (640×640) → CLIP Vision → Image Embeddings
-       ├── Audio  → MelBandRoFormer (Vocal Sep) → Wav2Vec2 → MultiTalk Embeddings
-       └── Prompt → UMT5-XXL Encoding → Text Embeddings
-                         ↓
-              WanVideo 2.1 I2V Sampler (14B)
-                         ↓
-                   VAE Decode → Frames
-                         ↓
-               Video Combiner + Cloned Audio
-                         ↓
-                     Final MP4 🎬
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+          ComfyUI I2V_InfiniteTalk Workflow
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Image  → Resize (640×640) → CLIP Vision → Image Embeddings
+  Audio  → MelBandRoFormer  → Wav2Vec2   → MultiTalk Embeddings
+  Prompt → UMT5-XXL Encoder             → Text Embeddings
+                      ↓
+          WanVideo 2.1 Sampler (14B)
+                      ↓
+              VAE Decode → Frames (25 FPS)
+                      ↓
+          Video Combiner + Cloned Audio
+                      ↓
+                  Final MP4 🎬
 ```
 
 ---
@@ -69,7 +81,7 @@ ComfyUI InfiniteTalk Workflow
 
 - Collected 10–20 personal photos with varied lighting and angles
 - Trained a custom **FLUX LoRA** on these photos
-- Generated 4 high-quality AI images of myself for use in the animation pipeline
+- Generated 4 high-quality AI images of myself for the animation pipeline
 
 | Why FLUX? |
 |---|
@@ -83,15 +95,13 @@ ComfyUI InfiniteTalk Workflow
 
 - Recorded 2–3 minutes of clean voice samples
 - Used **Chatterbox** for voice replication
-- Output: a cloned `.wav` audio file of my script, spoken in my voice
+- Output: a cloned `.wav` audio file of my script, spoken in my own voice
 
 ---
 
-## Stage 3 — Talking Head Animation (ComfyUI + InfiniteTalk)
+## Stage 3 — Talking Head Animation (InfiniteTalk)
 
-**Goal:** Animate the AI-generated images to lip-sync with the cloned audio.
-
-This is the core ComfyUI workflow, combining 5 models simultaneously:
+**Goal:** Animate the AI images to lip-sync with the cloned audio inside ComfyUI.
 
 ### Models Used
 
@@ -174,17 +184,17 @@ ComfyUI/models/
 ```
 1. Collect 10–20 high-quality photos of yourself
 2. Train FLUX LoRA on your photos
-3. Generate 4 AI images of yourself
+3. Generate AI images of yourself
 4. Record 2–3 minutes of voice samples
 5. Clone your voice using Chatterbox
-6. Write and generate your script audio
+6. Generate your script audio
 ```
 
 ### Step 2 — Setup ComfyUI
 ```
 1. Install ComfyUI
 2. Download all models (links below)
-3. Place models in correct directories (see structure above)
+3. Place models in correct directories
 4. Load I2V_InfiniteTalk_Workflow.json into ComfyUI
 ```
 
@@ -209,16 +219,15 @@ ComfyUI/models/
 | MelBandRoFormer | [HuggingFace](https://huggingface.co/Kijai/MelBandRoFormer_comfy) |
 
 ---
-
 ---
 
 ## Key Takeaways
 
-- **No stock avatars used** — all visuals generated from personal photos via FLUX LoRA
-- **No stock voices used** — audio cloned from personal voice recordings via Chatterbox
-- **14B parameter model** (WanVideo 2.1) produces significantly more realistic motion than smaller alternatives
+- **No stock avatars** — all visuals generated from personal photos via FLUX LoRA
+- **No stock voices** — audio cloned from personal recordings via Chatterbox
+- **14B parameter model** (WanVideo 2.1) produces significantly more realistic motion
 - **GGUF quantization** makes the 14B model accessible on consumer GPUs
-- **InfiniteTalk** enables frame-perfect lip-sync by combining audio embeddings directly into the video diffusion process
+- **InfiniteTalk** enables frame-perfect lip-sync by fusing audio embeddings directly into the video diffusion process
 
 ---
 
