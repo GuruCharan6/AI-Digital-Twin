@@ -28,7 +28,7 @@ The entire pipeline runs inside **ComfyUI**. No stock avatars. No celebrity like
 
 <div align="center">
 
-### [▶ Click here to watch the full 1-minute AI Digital Twin video](output/Final_Output.mp4)
+### [▶ Click here to watch the full 1-minute AI Digital Twin video](output/Final Output.mp4)
 
 > *1-minute talking head video — AI-generated visuals, cloned voice, frame-perfect lip-sync*
 
