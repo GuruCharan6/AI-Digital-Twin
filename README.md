@@ -29,7 +29,8 @@ The entire pipeline runs inside **ComfyUI**. No stock avatars. No celebrity like
 
 <div align="center">
 
-https://github.com/GuruCharan6/AI-Digital-Twin/assets/demo/Final_Output_2.mp4
+https://![Workflow](https://github.com/user-attachments/assets/97ec54ff-395c-4493-964d-aad31bd842f0)
+github.com/GuruCharan6/AI-Digital-Twin/assets/demo/Final_Output_2.mp4
 
 > *1-minute AI digital twin video — fully generated, cloned voice, lip-synced animation*
 
