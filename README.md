@@ -219,7 +219,6 @@ ComfyUI/models/
 | MelBandRoFormer | [HuggingFace](https://huggingface.co/Kijai/MelBandRoFormer_comfy) |
 
 ---
----
 
 ## Key Takeaways
 
